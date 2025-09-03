@@ -1,5 +1,5 @@
 * {
-    font-family: cursive !important;
+    font-family: "Comic Sans MS" !important;
 }
 
 html, body {
@@ -68,7 +68,6 @@ button:hover{
 
 #carrd_title {
     font-size: 5rem !important;
-    font-family: cursive !important;
     margin: 20px 0 10px;
     text-align: center;
 
