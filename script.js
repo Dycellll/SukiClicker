@@ -68,6 +68,35 @@ function click() {
     clearTimeout(saveTimeout);
     saveTimeout = setTimeout(saveGame, 500);
 }
+function makeParticle(){
+    const rect = cookie.getBoundingClientRect();
+
+    for (let i = 0; i < 8; i++) { // number of sparkles per click
+        const particle = document.createElement("div");
+        particle.classList.add("particle");
+
+        // Random position strictly inside cookie
+        const posX = rect.width / 8 + (Math.random() * (rect.width / 1.5));
+        const posY = rect.height / 8 + (Math.random() * (rect.height / 1.5));
+
+        // Random outward movement, small distance so it stays near cookie
+        const dx = (Math.random() - 0.5) * 40 + "px";
+        const dy = (Math.random() - 0.5) * 40 + "px";
+
+        particle.style.setProperty("--dx", dx);
+        particle.style.setProperty("--dy", dy);
+
+        // Position relative to cookie
+        particle.style.left = rect.left + posX + "px";
+        particle.style.top = rect.top + posY + "px";
+
+        document.body.appendChild(particle);
+
+        particle.addEventListener("animationend", () => {
+            particle.remove();
+        });
+    }
+}
 
 
 // 🔧 Upgrades
@@ -140,6 +169,7 @@ function startGame() {
     loadGame();
     setInterval(update, 100);
     cookie.addEventListener("click", click);
+    cookie.addEventListener("click", makeParticle);
     cookiePerClickUpgradeButton.addEventListener("click", buyCookiePerClick);
     cookiePerSecondUpgradeButton.addEventListener("click", buyCookiePerSecond);
     document.getElementById('reset-game').addEventListener('click', resetGame);

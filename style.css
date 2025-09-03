@@ -67,12 +67,65 @@ button:hover{
 }
 
 #carrd_title {
-    color: rgb(255, 146, 164) !important;
     font-size: 5rem !important;
-    font-style: bold !important;
     font-family: cursive !important;
     margin: 20px 0 10px;
     text-align: center;
+
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
+}
+
+.bigTextClass {
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
+}
+.mediumTextClass {
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
+}
+.smallTextClass {
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
+}
+#carrd_credits {
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
 }
 
 body {
@@ -447,6 +500,15 @@ body::before {
     text-align: center;
     margin: 10px 0;
     text-shadow: 0 0 25px rgba(255, 146, 164, 0.7);
+    background: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.6),
+                 0 0 20px rgba(255, 200, 220, 0.6),
+                 0 0 30px rgba(255, 146, 164, 0.4);
 }
 
 #carrd_content h1 {
@@ -466,16 +528,20 @@ body::before {
 
 .upgrade-section {
     background-color: black;
-    border: 5px solid rgb(255, 146, 164);
+    border: 5px solid transparent; /* make it transparent first */
     border-radius: 20px;
     padding: 15px;
     margin: 20px 0;
     text-align: center;
+
+    /* gradient border */
+    border-image: linear-gradient(90deg, rgb(254, 137, 157), rgb(255, 212, 228)) 1;
 }
 
 .upgrade-section h2 {
     color: rgb(255, 146, 164);
     font-size: 1.5rem;
+    margin-top: -10px;
     margin-bottom: 10px;
 }
 
@@ -487,237 +553,39 @@ body::before {
 
 .control-buttons{
     margin: auto;
-    font-size: 45px;
+    font-size: 60px;
+}
+.control-buttons button {
+    font-size: 1.8rem;
+    margin: 1px;
 }
 
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
+.particle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(45deg, rgb(254, 137, 157), rgb(255, 212, 228));
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%, 
+        79% 91%, 50% 70%, 21% 91%, 32% 57%, 
+        2% 35%, 39% 35%
+    ); /* star shape */
+    pointer-events: none;
+    opacity: 1;
+    box-shadow: 0 0 5px rgba(255, 146, 164, 0.7),
+                0 0 10px rgba(255, 200, 220, 0.6),
+                0 0 15px rgba(255, 146, 164, 0.4);
+    transform: rotate(0deg);
+    animation: sparkleAnim 1s ease-out forwards;
+}
 
-    body::before{
-        background-position: right center;
+@keyframes sparkleAnim {
+    0% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 1;
     }
-    
-    #carrd_rect {
-      width: 90%;
-      padding: 1.5rem;
-      margin: 20px auto;
-      touch-action: pan-y;
-    }
-    
-    #carrd_pfp {
-        width: 120px;
-        height: 120px;
-        max-width: 120px;
-        margin-bottom: 1.5rem;
-    }
-    
-    #carrd_username {
-      font-size: clamp(1.8rem, 7vw, 3rem);
-      margin-bottom: 1.5rem;
-    }
-    
-    #carrd_content {
-      font-size: 0.9rem;
-      padding: 0 0.5rem;
-    }
-    
-    #carrd_content li {
-      font-size: 1.1rem;
-    }
-    
-    #carrd_buttons button {
-      font-size: 11.6px;
-      padding: 8px 16px;
-      margin-left: 10px;
-      margin-bottom: 10px;
-    }
-
-    #cookie {
-        width: 150px;
-        height: 150px;
-    }
-    
-    #cookie-counter {
-        font-size: 2.5rem;
-    }
-    
-    #carrd_content h1 {
-        font-size: 1.5rem;
-    }
-    
-    #cookies-per-click,
-    #cookies-per-second {
-        font-size: 1.2rem;
-    }
-    
-    .upgrade-section {
-        padding: 10px;
-    }
-    
-    .upgrade-section h2 {
-        font-size: 1.3rem;
-    }
-    
-    #cookie-per-click-upgrade-button,
-    #cookie-per-second-upgrade-button {
-        font-size: 1rem;
-        padding: 8px 16px;
-        margin: 5px 0;
-    }
-
-    #reset-game {
-        margin-left: 26.8%;
-        margin-bottom: 5%;
-    }
-
-    button{
-        font-size: 1rem;
-        padding: 8px 16px;
-    }
-
-    #carrd_footer button{
-        font-size: .825rem;
-        padding: 8px 16px;
-    }
-
-    #achievements-container{
-        margin: 30px auto;
-        margin-left: -2.5%;
-        max-height: 300px;
-        background-color: black;
-        border: 5px solid white;
-        border-radius: 50px;
-        overflow-y: auto;
-        padding: 25px;
-        width: 85%;
-        max-width: 800px;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-        touch-action: pan-y; 
-        box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.8);
-        animation: fadeIn 1s ease-in-out;
-    }
-
-    #projects-container{
-        display: block;
-        overflow-x: hidden;
-        overflow-y: auto;
-        max-height: 400px;
-    }
-
-    .project-card {
-        width: auto;
-        min-width: auto;
-        height: auto;
-        margin-bottom: 20px; 
-        display: block;
-    }
-    
-    #projects-container::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .project-card:first-child {
-        margin-top: -20px;
-    }
-
-    .project-card:last-child {
-        margin-bottom: 0;
-    }
-    
-    .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
-    }
-    
-    .project-card h2 {
-        color: white;
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-        font-family: "ULTRAFONT";
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-    }
-    
-    .project-card p {
-        color: white;
-        font-size: 1rem;
-        line-height: 1.4;
-        font-family: "ULTRAFONT";
-    }
-    
-    .projects-title {
-        color: white;
-        font-size: clamp(2rem, 8vw, 4rem);
-        font-family: "ULTRAFONT";
-        text-align: center;
-        margin: 40px auto 20px;
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-    
-    #projects-container a {
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        margin-top: 20px;
-    }
-
-    .achievement-image {
-        height: 110px;
-        width: 110px;
-        float: none;
-        border-radius: 30px;
-        object-fit: cover;
-        margin-bottom: 15px;
-        margin-left: 27.5%;
-        border: 3px solid white;
-    }
-
-    .project-image{
-        float: none;
-        margin: 0 auto 15px;
-        display: block;
-    }
-
-    .project-link {
-        position: static;
-        transform: none;
-        display: block;
-        margin-top: 15px;
-        text-align: center;
-    }
-
-    @media (max-width: 480px) {
-        body::before {
-            background-position: right center;
-        }
-
-        #cookie {
-            width: 120px;
-            height: 120px;
-        }
-        
-        #cookie-counter {
-            font-size: 2rem;
-        }
-
-        button{
-            font-size: 20px;
-            padding: 8px 16px;
-        }
-
-        .project-card {
-            padding: 20px;
-        }
-        
-        .project-image {
-            width: 150px;
-            height: 150px;
-        }
+    100% {
+        transform: translate(var(--dx), var(--dy)) rotate(360deg) scale(0);
+        opacity: 0;
     }
 }
