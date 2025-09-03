@@ -14,10 +14,12 @@ html, body {
 }
 
 #site-wrapper {
-    width: 1200px;    /* base width */
-    height: 2100px;   /* base height */
-    transform-origin: center center;  /* scale from center */
+    width: 1200px;   /* base width */
+    height: 2100px;  /* base height */
     position: relative;
+    transform-origin: center center; /* or center center */
+    /* dynamically scale based on viewport */
+    transform: scale(var(--site-scale));
 }
 
 #carrd_credits{

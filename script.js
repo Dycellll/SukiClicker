@@ -191,11 +191,14 @@ function startPage(){
 }
 
 function scaleSite() {
-    const wrapper = document.getElementById('site-wrapper');
-    const scaleX = window.innerWidth / wrapper.offsetWidth;
-    const scaleY = window.innerHeight / wrapper.offsetHeight;
-    const scale = Math.min(scaleX, scaleY) * 0.949; // scale slightly smaller
-    wrapper.style.transform = `scale(${scale})`;
+    const wrapper = document.getElementById("site-wrapper");
+    const scaleX = window.innerWidth / 1200;
+    const scaleY = window.innerHeight / 2100;
+    let scale = Math.min(scaleX, scaleY);
+
+    scale *= 0.98; // shrink a little bit
+
+    wrapper.style.setProperty("--site-scale", scale);
 }
 window.addEventListener('resize', scaleSite);
 window.addEventListener('load', scaleSite);
