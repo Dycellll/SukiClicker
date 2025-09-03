@@ -222,22 +222,21 @@ function startPage(){
 
 function scaleSite() {
     const wrapper = document.getElementById("site-wrapper");
-    const scaleX = window.innerWidth / 1200;
-    const scaleY = window.innerHeight / 2100;
-    let scale = Math.min(scaleX, scaleY);
+    const baseWidth = 1200;
+    const baseHeight = 2100;
 
-    // Cap maximum scale at 1 (no upscaling)
-    scale = Math.min(scale, 1);
+    const scaleX = window.innerWidth / baseWidth;
+    const scaleY = window.innerHeight / baseHeight;
 
-    // Optional: shrink slightly on very small screens
-    if (window.innerWidth <= 768) {
-        scale *= 0.95; // tweak this factor
-    }
+    // Take the smaller scale so it fits both width and height
+    const scale = Math.min(scaleX, scaleY, 0.98); // optional max scale
 
-    const offsetX = (window.innerWidth - 1200 * scale) / 2;
-    const offsetY = (window.innerHeight - 2100 * scale) / 2;
+    // Compute offsets based on scaled size
+    const offsetX = (window.innerWidth - baseWidth * scale) / 2;
+    const offsetY = (window.innerHeight - baseHeight * scale) / 2;
 
     wrapper.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+    wrapper.style.transformOrigin = 'top left';
 }
 
 window.addEventListener('resize', scaleSite);
