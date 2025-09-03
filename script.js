@@ -220,28 +220,28 @@ function startPage(){
     startGame();
 }
 
+function isMobileOrTablet() {
+    const ua = navigator.userAgent;
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+}
+
 function scaleSite() {
     const wrapper = document.getElementById("site-wrapper");
-    const baseWidth = 1200;
-    const baseHeight = 2100;
+    const scaleX = window.innerWidth / 1200;
+    const scaleY = window.innerHeight / 2100;
+    let scale = Math.min(scaleX, scaleY);
 
-    const scaleX = window.innerWidth / baseWidth;
-    const scaleY = window.innerHeight / baseHeight;
+    if (isMobileOrTablet()) {
+        scale *= 1.1; // bigger on phones/tablets
+    } else {
+        scale *= 1; // shrink a little on desktop
+    }
 
-    // Take the smaller scale so it fits both width and height
-    const scale = Math.min(scaleX, scaleY, 0.98); // optional max scale
-
-    // Compute offsets based on scaled size
-    const offsetX = (window.innerWidth - baseWidth * scale) / 2;
-    const offsetY = (window.innerHeight - baseHeight * scale) / 2;
-
-    wrapper.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
-    wrapper.style.transformOrigin = 'top left';
+    wrapper.style.setProperty("--site-scale", scale);
 }
 
 window.addEventListener('resize', scaleSite);
 window.addEventListener('load', scaleSite);
-
 
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
