@@ -24,7 +24,7 @@ let cookiePerSecondUpgradeButton = document.getElementById("cookie-per-second-up
 const audio = document.getElementById("bgAudio");
 const musicButton = document.getElementById("mute-button");
 const resetButton = document.getElementById("reset-music-button");
-audio.volume = 0.3;
+audio.volume = 0.2;
 
 // Load paused state from localStorage (default: playing)
 let isPaused = localStorage.getItem("sukiMusicPaused") === "true";
@@ -199,6 +199,10 @@ function scaleSite() {
 }
 window.addEventListener('resize', scaleSite);
 window.addEventListener('load', scaleSite);
+
+document.addEventListener('touchmove', function(e) {
+    e.preventDefault();
+}, { passive: false });
 
 
 window.onload = startPage;
