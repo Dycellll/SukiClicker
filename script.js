@@ -26,8 +26,8 @@ const musicButton = document.getElementById("mute-button");
 const resetButton = document.getElementById("reset-music-button");
 audio.volume = 0.2;
 
-// Load paused state from localStorage (default: playing)
-let isPaused = localStorage.getItem("sukiMusicPaused") === "true";
+let saved = localStorage.getItem("sukiMusicPaused");
+let isPaused = saved === null ? true : saved === "true";
 
 // Apply initial state
 if (!isPaused) {
@@ -103,7 +103,7 @@ function makeParticle(){
 function buyCookiePerClick() {
     if (cookieCount >= cookiePerClickCost) {
         cookieCount -= cookiePerClickCost;
-        cookiePerClick += 2;
+        cookiePerClick += Math.floor(cookiePerClick * 0.1 + 1);
         cookiePerClickCost = Math.floor(cookiePerClickCost * 1.2);
         cookiePerClickCount++;
         updateCookieCountDisplay();
@@ -115,7 +115,7 @@ function buyCookiePerClick() {
 function buyCookiePerSecond() {
     if (cookieCount >= cookiePerSecondCost) {
         cookieCount -= cookiePerSecondCost;
-        cookiePerSecond += 2;
+        cookiePerSecond += Math.floor(cookiePerSecond * 0.1 + 1);
         cookiePerSecondCost = Math.floor(cookiePerSecondCost * 1.25);
         cookiePerSecondCount++;
         updateCookieCountDisplay();
