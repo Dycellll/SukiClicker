@@ -556,8 +556,13 @@ body::before {
     font-size: 60px;
 }
 .control-buttons button {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin: 1px;
+}
+.control-buttons #mute-button {
+    width: 200px; /* fixed width */
+    text-align: center; /* center the text */
+    white-space: nowrap; /* prevent wrapping */
 }
 
 .particle {
