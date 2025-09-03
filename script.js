@@ -238,4 +238,3 @@ document.addEventListener('touchmove', function(e) {
 }, { passive: false });
 
 
-window.onload = startPage;
