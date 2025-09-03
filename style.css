@@ -497,14 +497,6 @@ body::before {
     .container {
         width: 90%;
     }
-    html {
-      height: -webkit-fill-available;
-    }
-    
-    body {
-      height: 100%;
-      overflow-y: auto;
-    }
 
     body::before{
         background-position: right center;
