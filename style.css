@@ -5,22 +5,20 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
-    overflow: hidden !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    overflow: hidden;
 }
 
 #site-wrapper {
-    width: 1200px;   /* base width */
-    height: 2100px;  /* base height */
-    position: relative;
-    transform-origin: center center; /* or center center */
-    /* dynamically scale based on viewport */
-    transform: scale(var(--site-scale));
+    width: 1200px;
+    height: 2100px;
+    position: absolute; /* <-- change relative -> absolute */
+    top: 0;
+    left: 0;
+    transform-origin: top left;
 }
+
 
 #carrd_credits{
     font-size: 25px;

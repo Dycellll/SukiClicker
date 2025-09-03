@@ -224,14 +224,17 @@ function scaleSite() {
     const wrapper = document.getElementById("site-wrapper");
     const scaleX = window.innerWidth / 1200;
     const scaleY = window.innerHeight / 2100;
-    let scale = Math.min(scaleX, scaleY);
+    const scale = Math.min(scaleX, scaleY);
 
-    scale *= 0.98; // shrink a little bit
+    // center based on scaled size
+    const offsetX = (window.innerWidth - 1200 * scale) / 2;
+    const offsetY = (window.innerHeight - 2100 * scale) / 2;
 
-    wrapper.style.setProperty("--site-scale", scale);
+    wrapper.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
 }
 window.addEventListener('resize', scaleSite);
 window.addEventListener('load', scaleSite);
+
 
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
