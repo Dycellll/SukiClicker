@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suki Clicker</title>
+    <link rel="icon" type="image/png" href="Resources/Images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+    <div>
+        <audio id="bgAudio" src="Resources/Music/bgMusic.mp3" loop></audio>
+        <div id="site-wrapper">
+            <div id="carrd_rect">
+                <div id="carrd_content">
+                    <h1 id="carrd_title">Suki Clicker</h1>
+                    <h2 id="cookie-counter">0</h2>
+                    <img id="cookie" src="Resources/Images/favicon.png">
+                    <hr style="background-color: rgb(255, 146, 164)">
+                    <h1 style="color: rgb(255, 146, 164); font-size: 65px">Your Stats</h1>
+                    <h2 id="cookies-per-click" style="color: rgb(255, 146, 164); font-size: 30px">Suki Per Click: 1</h2>
+                    <h2 id="cookies-per-second" style="color: rgb(255, 146, 164); font-size: 30px">Suki Per Second: 0</h2>
+                    <hr style="background-color: rgb(255, 146, 164)">
+                    <h1 style="color: rgb(255, 146, 164); font-size: 65px">Upgrades</h1>
+                    
+                    <div class="upgrade-section">
+                        <h2 style="color: rgb(255, 146, 164); font-size: 45px">Click Power</h2>
+                        <p id="cookie-per-click-count" style="color: rgb(255, 146, 164); font-size: 30px">Upgrades: 0</p>
+                        <p id="cookie-per-click-cost" style="color: rgb(255, 146, 164); font-size: 30px">Cost: 10</p>
+                        <button id="cookie-per-click-upgrade-button" style="font-size: 30px">Upgrade (+1 per click)</button>
+                    </div>
+                    
+                    <div class="upgrade-section">
+                        <h2 style="color: rgb(255, 146, 164); font-size: 45px">Auto Clicker</h2>
+                        <p id="cookie-per-second-count" style="color: rgb(255, 146, 164); font-size: 30px">Upgrades: 0</p>
+                        <p id="cookie-per-second-cost" style="color: rgb(255, 146, 164); font-size: 30px">Cost: 100</p>
+                        <button id="cookie-per-second-upgrade-button" style="font-size: 30px;">Upgrade (+1 per second)</button>
+                    </div>
+                    
+                    <div class="control-buttons">
+                        <button id="reset-game">Reset Progress</button>
+                        <button id="mute-button">Pause Music</button>
+                        <button id="reset-music-button">Reset Music</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="carrd_rect_footer">
+                <div id="carrd_footer">
+                    <h3 id="carrd_credits" style="font-size: 45px">By Dycel, for Suki</h3>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

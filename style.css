@@ -1,0 +1,734 @@
+@font-face {
+    font-family: 'ULTRAFONT';
+    src: url("Resources/Fonts/VCR_OSD_MONO.ttf");
+}
+
+* {
+    font-family: cursive !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#site-wrapper {
+    width: 1200px;    /* base width */
+    height: 2100px;   /* base height */
+    transform-origin: center center;  /* scale from center */
+    position: relative;
+}
+
+#carrd_credits{
+    font-size: 25px;
+    color: rgb(255, 146, 164);
+}
+
+button, a, img {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    user-select: none;
+}
+  
+button:focus, a:focus, img:focus {
+    outline: none;
+}
+
+button{
+    background-color: black;
+    color: rgb(255, 146, 164);
+    border: 3px solid rgb(255, 146, 164);
+    border-radius: 10px;
+    font-size: 25px;
+    height: auto;
+    margin-left: 15px;
+    padding: 10px 20px;
+}
+
+#carrd_footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+#carrd_footer a {
+    flex: 1 1 120px;
+    min-width: 120px;
+    max-width: max-content;
+}
+
+button:hover{
+    background-color: rgb(255, 146, 164);
+    color: black;
+}
+
+#carrd_title {
+    color: rgb(255, 146, 164) !important;
+    font-size: 5rem !important;
+    font-style: bold !important;
+    font-family: cursive !important;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+body {
+    line-height: 1.0;
+    min-height: var(--viewport-height);
+    min-width: 320px;
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+button, a, img {
+    user-select: none;
+}
+
+#carrd_list a{
+    color: rgb(255, 146, 164);
+    text-decoration: none;
+}
+
+html:root{
+    --background-height: 100vh;
+    --site-language-alignment: left;
+    --site-language-direction: ltr;
+    --site-language-flex-alignment: flex-start;
+    --site-language-indent-left: 1;
+    --site-language-indent-right: 0;
+    --site-language-margin-left: 0;
+    --site-language-margin-right: auto;
+    --viewport-height: 100vh;
+}
+
+body, html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("Resources/Images/bg.jpg") center / cover no-repeat;
+    z-index: -1;
+}
+#carrd_rect_header{
+    background-color: black;
+    border: white solid 5px;
+    border-radius: 50px;
+    width: 85%;
+    max-width: 800px;
+    margin: 5% auto auto auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(255, 146, 164, 0.8);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#carrd_rect_footer{
+    background-color: black;
+    border: rgb(255, 146, 164) solid 5px;
+    border-radius: 50px;
+    width: 85%;
+    max-width: 800px;
+    margin: 1% auto 5% auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(255, 146, 164, 0.8);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#carrd_rect {
+    background-color: black;
+    border: rgb(255, 146, 164) solid 5px;
+    border-radius: 50px;
+    width: 85%;
+    max-width: 800px;
+    margin: 1% auto auto auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 10px 10px 10px rgba(255, 146, 164, 0.8);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+#carrd_username {
+    color: white;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-family: "ULTRAFONT";
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 146, 164, 0.8), 0 0 20px rgba(255, 146, 164, 0.8), 0 0 30px rgba(255, 146, 164, 0.4);
+}
+  
+#carrd_pfp {
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 10px rgba(255, 146, 164, 0.8), 0 0 20px rgba(255, 146, 164, 0.8), 0 0 30px rgba(255, 146, 164, 0.4);;
+    aspect-ratio: 1/1;
+    transform: scale(1);
+    transition: transform 0.2s ease-in-out;
+}
+
+#carrd_pfp:hover {
+    transform: scale(1.1);
+    transition: transform 0.25s ease-in-out;
+}
+  
+#carrd_content {
+    color: white;
+    font-size: 1rem;
+    font-family: "ULTRAFONT";
+    line-height: 1.6;
+    padding: 0 1rem;
+}
+  
+#carrd_content li {
+    color: white;
+    font-size: 1.3rem;
+    font-family: "ULTRAFONT";
+    line-height: 1.5;
+}
+
+#achievements-container {
+    background-color: black;
+    border: 5px solid white;
+    border-radius: 50px;
+    overflow-y: auto;
+    padding: 25px;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 800px;
+    max-height: 400px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y; 
+    box-shadow: 10px 10px 10px rgba(255, 146, 164, 0.8);
+    animation: fadeIn 1s ease-in-out;
+}
+
+#achievements-container::-webkit-scrollbar {
+    display: none;
+}
+
+.achievement-card {
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 40px;
+    padding: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.achievement-card:last-child {
+    margin-bottom: 20px;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+.achievement-image {
+    float: right;
+    height: 110px;
+    width: 110px;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid white;
+}
+
+.achievement-card h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "ULTRAFONT";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.achievement-card p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-family: "ULTRAFONT";
+}
+
+.achievements-title {
+    color: white;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-family: "ULTRAFONT";
+    text-align: center;
+    margin: 40px auto 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#achievements-container a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+#projects-container {
+    background-color: black;
+    border: 5px solid white;
+    border-radius: 50px;
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    margin: 30px auto;
+    width: 85%;
+    max-width: 800px;
+    scrollbar-width: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.8);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.project-card {
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 40px;
+    padding: 25px;
+    width: 280px;
+    min-width: 280px;
+    box-sizing: border-box;
+    height: 450px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+#projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+.project-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 5%;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.project-card h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-family: "ULTRAFONT";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.project-card p {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    white-space: normal;
+    font-family: "ULTRAFONT";
+}
+
+.project-card .tech-badge {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 2px solid white;
+    font-family: "ULTRAFONT";
+    text-transform: uppercase;
+}
+
+.projects-title {
+    color: white;
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-family: "ULTRAFONT";
+    text-align: center;
+    margin: 40px auto 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.project-link {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: "ULTRAFONT";
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#cookie {
+    width: 350px;
+    height: 350px;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer;
+    transform-origin: center center;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+#cookie:active {
+    transform: scale(0.95);
+}
+
+#cookie-counter {
+    font-size: 3rem;
+    color: rgb(255, 146, 164);
+    text-align: center;
+    margin: 10px 0;
+    text-shadow: 0 0 25px rgba(255, 146, 164, 0.7);
+}
+
+#carrd_content h1 {
+    color: rgb(255, 146, 164);
+    font-size: 1.8rem;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+
+#cookies-per-click,
+#cookies-per-second {
+    font-size: 1.5rem;
+    color: white;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.upgrade-section {
+    background-color: black;
+    border: 5px solid rgb(255, 146, 164);
+    border-radius: 20px;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.upgrade-section h2 {
+    color: rgb(255, 146, 164);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.upgrade-section p {
+    color: white;
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.control-buttons{
+    margin: auto;
+    font-size: 45px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
+    
+    body {
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    body::before{
+        background-position: right center;
+    }
+    
+    #carrd_rect {
+      width: 90%;
+      padding: 1.5rem;
+      margin: 20px auto;
+      touch-action: pan-y;
+    }
+    
+    #carrd_pfp {
+        width: 120px;
+        height: 120px;
+        max-width: 120px;
+        margin-bottom: 1.5rem;
+    }
+    
+    #carrd_username {
+      font-size: clamp(1.8rem, 7vw, 3rem);
+      margin-bottom: 1.5rem;
+    }
+    
+    #carrd_content {
+      font-size: 0.9rem;
+      padding: 0 0.5rem;
+    }
+    
+    #carrd_content li {
+      font-size: 1.1rem;
+    }
+    
+    #carrd_buttons button {
+      font-size: 11.6px;
+      padding: 8px 16px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    #cookie {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #cookie-counter {
+        font-size: 2.5rem;
+    }
+    
+    #carrd_content h1 {
+        font-size: 1.5rem;
+    }
+    
+    #cookies-per-click,
+    #cookies-per-second {
+        font-size: 1.2rem;
+    }
+    
+    .upgrade-section {
+        padding: 10px;
+    }
+    
+    .upgrade-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    #cookie-per-click-upgrade-button,
+    #cookie-per-second-upgrade-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+        margin: 5px 0;
+    }
+
+    #reset-game {
+        margin-left: 26.8%;
+        margin-bottom: 5%;
+    }
+
+    button{
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    #carrd_footer button{
+        font-size: .825rem;
+        padding: 8px 16px;
+    }
+
+    #achievements-container{
+        margin: 30px auto;
+        margin-left: -2.5%;
+        max-height: 300px;
+        background-color: black;
+        border: 5px solid white;
+        border-radius: 50px;
+        overflow-y: auto;
+        padding: 25px;
+        width: 85%;
+        max-width: 800px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        touch-action: pan-y; 
+        box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.8);
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    #projects-container{
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 400px;
+    }
+
+    .project-card {
+        width: auto;
+        min-width: auto;
+        height: auto;
+        margin-bottom: 20px; 
+        display: block;
+    }
+    
+    #projects-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .project-card:first-child {
+        margin-top: -20px;
+    }
+
+    .project-card:last-child {
+        margin-bottom: 0;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    }
+    
+    .project-card h2 {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-family: "ULTRAFONT";
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    
+    .project-card p {
+        color: white;
+        font-size: 1rem;
+        line-height: 1.4;
+        font-family: "ULTRAFONT";
+    }
+    
+    .projects-title {
+        color: white;
+        font-size: clamp(2rem, 8vw, 4rem);
+        font-family: "ULTRAFONT";
+        text-align: center;
+        margin: 40px auto 20px;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    #projects-container a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        margin-top: 20px;
+    }
+
+    .achievement-image {
+        height: 110px;
+        width: 110px;
+        float: none;
+        border-radius: 30px;
+        object-fit: cover;
+        margin-bottom: 15px;
+        margin-left: 27.5%;
+        border: 3px solid white;
+    }
+
+    .project-image{
+        float: none;
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .project-link {
+        position: static;
+        transform: none;
+        display: block;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    @media (max-width: 480px) {
+        body::before {
+            background-position: right center;
+        }
+
+        #cookie {
+            width: 120px;
+            height: 120px;
+        }
+        
+        #cookie-counter {
+            font-size: 2rem;
+        }
+
+        button{
+            font-size: 20px;
+            padding: 8px 16px;
+        }
+
+        .project-card {
+            padding: 20px;
+        }
+        
+        .project-image {
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
